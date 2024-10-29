@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Mensagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin: 20px;
+            font-size: 24px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: aqua;
+        }
+
+
+        .yes {
+            background-color: rgb(4, 255, 34);
+            margin-left: -120px;
+            margin-top: 30px;
+            padding: 10px;
+            float: left;
+
+        }
+
+        .no {
+            background-color: red;
+            float: right;
+            margin-right: -120px;
+            margin-top: -40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="message"></h1>
+    <button id="startButton">Clica em eu primeiro</button>
+
+    <script>
+        const messageElement = document.getElementById('message');
+        const startButton = document.getElementById('startButton');
+        const message = "Quando poderei chamar dona Aline Saltiel de sogra?";
+        let index = 0;
+
+        startButton.addEventListener('click', function() {
+            messageElement.textContent = ''; // Limpa a mensagem anterior
+            index = 0; // Reseta o índice
+            showLetter(); // Inicia a exibição da mensagem
+        });
+
+        function showLetter() {
+            if (index < message.length) {
+                messageElement.textContent += message[index]; // Adiciona a letra atual
+                index++; // Avança para a próxima letra
+                setTimeout(showLetter, 100); // Chama a função novamente após 100ms
+            }
+        }
+        
+        
+    </script>
+   <a href="page3.html""> <button class="yes">Hoje mesmo</button> </a>
+    <a href="page2.html"> <button class="no">Sai fora</button> </a>
+</body>
+</html>
